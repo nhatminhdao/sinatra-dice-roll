@@ -1,0 +1,29 @@
+<!-- /views/wrapper.erb -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dice Roll</title>
+
+  <style>
+    .navbar {
+      display:flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div><a href="/dice">Dice Roll</a></div>
+    <div><a href="/dice/2d6">2d6</a></div>
+    <div><a href="/dice/2d10">2d10</a></div>
+    <div><a href="/dice/1d20">1d20</a></div>
+    <div><a href="/dice/5d4">5d4</a></div>
+  </div>
+
+  <!-- Here is the part that varies from action to action-->
+	<%= yield %>
+
+</body>
+</html>
