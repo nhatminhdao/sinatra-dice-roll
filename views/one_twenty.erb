@@ -6,6 +6,11 @@
 
 <body>
   <h1>1d20</h1>
-  <p><%= @outcome %></p>
+  <!--if odd, text is red, if even, text is blue-->
+  <% if @die.odd? == true %>
+    <p style="color: red"><%= @outcome %></p>
+  <% else %>
+    <p style="color: blue"><%= @outcome %></p>
+  <% end %>
 </body>
 </html>

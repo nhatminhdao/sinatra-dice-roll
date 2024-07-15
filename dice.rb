@@ -41,8 +41,8 @@ get ("/dice/2d10") do
 end
 
 get ("/dice/1d20") do
-  die = rand (1..20)
-  @outcome = "You rolled a #{die}."
+  @die = rand (1..20)
+  @outcome = "You rolled a #{@die}."
   erb(:one_twenty)
 end
 
@@ -55,4 +55,13 @@ get ("/dice/5d4") do
   sum = first_die + second_die + third_die + fourth_die + fifth_die
   @outcome = "You rolled a #{first_die}, a #{second_die}, a #{third_die}, a #{fourth_die} and a #{fifth_die} for a total of #{sum}."
   erb(:five_four)
+end
+
+get ("/dice/100d6") do
+  @rolls = []
+  100.times do
+    die = rand (1..6)
+    @rolls.push(die)
+  end
+  erb(:one_hundred_six)
 end
